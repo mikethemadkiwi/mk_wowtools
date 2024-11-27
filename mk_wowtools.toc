@@ -1,9 +1,9 @@
 ## Interface: 11200
-## Title: |cbada55ccMadkiwis|cfefef1ffWowTools |cffff5555(alpha)
+## Title: |cffbada55Mad|rkiwis|cffbada55Wow|rTools|cffbada55(|rv0.1|cffbada55)
 ## Author: MiketheMadkiwi
-## Notes: Mostly Utils and toys for madkiwi to use for his wow mods that him and guildies use
-## Version: 0.1
+## Notes: Tools and Toys for Madkiwi & the Boys.
+## Version: GIT
 # api
-windget.lua
+modules\windget.lua
 # main
 mkUtils.lua

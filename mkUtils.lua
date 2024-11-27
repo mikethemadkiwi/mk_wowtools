@@ -30,7 +30,7 @@ end
 mkToolbar = windget.window:CreateWindow("MKUTILS", 220, 36, true, true)
 mkWindow = windget.window:CreateWindow("MKEvents", 200, 400)
 mkToolbar["button"] = windget.widget:CreateWidget("Button", "mkButton", mkToolbar)
-windget.widget:SkinButton(mkToolbar["button"], "Interface\\AddOns\\mkUtils\\img\\mike.tga")
+windget.widget:SkinButton(mkToolbar["button"], "Interface\\AddOns\\mk_wowtoools\\img\\mike.tga")
 mkWindow:SetMinResize(320, 120)
 -- mkWindow:SetMaxResize(160, 60)
 mkToolbar:SetWidth(80)
