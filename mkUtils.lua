@@ -19,25 +19,27 @@ end
 
 function HeartBeat()
     if ISSERVER then
-        SendChatMessage("|cBABABA00BOOPTHESNOOT|r", "CHANNEL", nil, 7)
+        SendChatMessage("|cFFBADA55BOOPTHESNOOT|r", "CHANNEL", nil, 7)
     else
-        SendChatMessage("|cBABABA00SNOOTTHEBOOP|r", "CHANNEL", nil, 7)
+        SendChatMessage("|cFFBADA55SNOOTTHEBOOP|r", "CHANNEL", nil, 7)
     end
 end
 
 -- PLAYER_FLAGS_CHANGED -- afk flags
 
-mkToolbar = windget.window:CreateWindow("MKUTILS", 220, 36, true, true)
+mkToolbar = windget.window:CreateWindow("|cffbada55Mad|rkiwis|cffbada55Wow|rTools", 120, 40, true, true)
 mkWindow = windget.window:CreateWindow("MKEvents", 200, 400)
 mkToolbar["button"] = windget.widget:CreateWidget("Button", "mkButton", mkToolbar)
-windget.widget:SkinButton(mkToolbar["button"], "Interface\\AddOns\\mk_wowtoools\\img\\mike.tga")
+mkToolbar["button2"] = windget.widget:CreateWidget("Button", "mkButton2", mkToolbar)
+windget.widget:SkinButton(mkToolbar["button"], "Interface\\AddOns\\mk_wowtools\\img\\mike.tga")
+windget.widget:SkinButton(mkToolbar["button2"], "Interface\\AddOns\\mk_wowtools\\img\\particle.tga")
 mkWindow:SetMinResize(320, 120)
 -- mkWindow:SetMaxResize(160, 60)
-mkToolbar:SetWidth(80)
+mkToolbar:SetWidth(120)
 mkToolbar:SetHeight(40)
-mkToolbar["button"]:SetWidth(16)
-mkToolbar["button"]:SetHeight(16)
-mkToolbar["button"]:SetPoint("TOPLEFT", 10+(30*(1-1)), -10)
+mkToolbar["button"]:SetWidth(34)
+mkToolbar["button"]:SetHeight(34)
+mkToolbar["button"]:SetPoint("TOPLEFT", 10+(30*(1-1)), 0)
 mkToolbar["button"]:SetScript("OnClick", function()
     -- mkWindow.input:AddMessage("|cff555555" .. date("%H:%M:%S") .. " boopsnoot ")
     if mkWindow.title:IsShown() then
@@ -48,7 +50,16 @@ mkToolbar["button"]:SetScript("OnClick", function()
         mkWindow.title:Show()
       end
 end)
+
+mkToolbar["button2"]:SetWidth(34)
+mkToolbar["button2"]:SetHeight(34)
+mkToolbar["button2"]:SetPoint("TOPLEFT", 50+(30*(1-1)), 0)
 -- RegisterEvent("PLAYER_FLAGS_CHANGED")
+
+-- mkWindow:RegisterEvent("PLAYER_ENTERING_WORLD")
+-- mkWindow:RegisterEvent("PLAYER_REGEN_ENABLED")
+-- mkWindow:RegisterEvent("PLAYER_REGEN_DISABLED")
+
 mkWindow:RegisterAllEvents()
 mkWindow:SetScript("OnEvent", function()
     local isreadyAction = false
@@ -166,3 +177,17 @@ mkWindow.input:SetScript("OnHyperlinkClick", function()
 
   ItemRefTooltip:Show()
 end)
+
+-- -- show/hide on combat
+-- mkWindow:SetScript("OnEvent", function()
+--     if event == "PLAYER_REGEN_DISABLED" then
+--         mkToolbar:Show()
+--         mkWindow:Show()
+--         mkWindow.title:Show()
+--     end
+--     if event == "PLAYER_REGEN_ENABLED" or event == "PLAYER_ENTERING_WORLD" then
+--         mkToolbar:Hide()
+--         mkWindow:Hide()
+--         mkWindow.title:Hide()
+--     end
+-- end)
